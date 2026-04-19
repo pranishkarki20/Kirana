@@ -2,32 +2,20 @@ import { motion } from "framer-motion";
 import { Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Product.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Product() {
-  const [products, setProducts] = useState([]);
+  const product = [
+    { id: 1, name: "Macbook", image: "/mac.jpg", price: "$1000", category: "mobile" },
+    { id: 2, name: "Iphone", image: "/iphone.jpg", price: "$599", category: "mobile" },
+    { id: 3, name: "Suit", image: "/suit.jpg", price: "$250", category: "clothes" },
+    { id: 4, name: "Check shirt", image: "/checkshirt.jpg", price: "$100", category: "clothes" },
+    { id: 5, name: "Bag", image: "/bag.jpg", price: "$89.90", category: "clothes" }
+  ];
+
   const [category, setCategory] = useState("all");
-  const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetch("/api/products")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Products request failed");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const productList = Array.isArray(data?.[0]) ? data[0] : data;
-        setProducts(Array.isArray(productList) ? productList : []);
-      })
-      .catch((err) => {
-        console.error(err);
-        setError("Unable to load products");
-      });
-  }, []);
-
-  const filteredProducts = products.filter((item) => {
+  const filterproducts = product.filter((item) => {
     return category === "all" || item.category === category;
   });
 
@@ -37,36 +25,21 @@ export default function Product() {
         <h1>Featured Product</h1>
 
         <select
-          className="dropdown"
-          onChange={(e) => setCategory(e.target.value)}
-          value={category}
-        >
+        className = "dropdown"
+        onChange={(e) => setCategory(e.target.value)} value={category}>
           <option value="all">All</option>
           <option value="mobile">Electronics</option>
           <option value="clothes">Clothes</option>
         </select>
 
         <div className="Productitems">
-          {error && <p className="product-message">{error}</p>}
-          {!error && filteredProducts.length === 0 && (
-            <p className="product-message">No products found</p>
-          )}
-
-          {filteredProducts.map((item) => (
+          {filterproducts.map((item) => (
             <motion.div
               key={item.id}
               whileHover={{ scale: 1.1 }}
               className="Card"
             >
-              <img
-                src={item.image || "https://placehold.co/400x500?text=Product"}
-                alt={item.name}
-                className="imges"
-                onError={(e) => {
-                  e.currentTarget.src =
-                    "https://placehold.co/400x500?text=Product";
-                }}
-              />
+              <img src={item.image} alt={item.name} className="imges" />
               <div className="text">{item.name}</div>
               <div className="Price">{item.price}</div>
 
@@ -80,7 +53,7 @@ export default function Product() {
                   justifyContent: "center",
                   color: "black",
                   background: "white",
-                  width: "160px",
+                  width: "160px"
                 }}
               >
                 Add to Cart
@@ -94,7 +67,7 @@ export default function Product() {
           sx={{
             margin: "15px auto",
             color: "black",
-            borderColor: "black",
+            borderColor: "black"
           }}
         >
           View all products
