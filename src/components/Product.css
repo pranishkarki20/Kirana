@@ -15,6 +15,12 @@
     padding: 14px;
     gap: 24px;
 }
+.product-message {
+  width: 100%;
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+}
 .Card {
   width: 240px;
   min-height: 340px;
