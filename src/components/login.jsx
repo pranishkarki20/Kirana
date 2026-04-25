@@ -8,6 +8,7 @@ const MotionLink = motion(Link);
 
 function Login() {
   const navigate = useNavigate();
+  const { setUserData } = useAuth();
 
   const [form, setForm] = useState({
     email: "",
@@ -31,7 +32,7 @@ function Login() {
       }
 
       // Call backend login API
-      const res = await fetch("http://localhost:3000/api/v1/users/login", {
+      const res = await fetch("https://backend-s083.onrender.com/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -42,8 +43,9 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        // Store user data with correct key
+        // Store user data with correct key and update AuthContext state
         localStorage.setItem("kinara_user", JSON.stringify(data.user));
+        setUserData(data.user);
         navigate("/pages/admin");
       } else {
         setError(data.message || "Login failed");
@@ -57,25 +59,80 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={form.email}
-        onChange={(e) => setForm({ ...form, email: e.target.value })}
-      />
+    <div className="pages">
+      <form onSubmit={handleSubmit}>
+        <motion.div
+          className="container1"
+          id="login"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1>Welcome Back</h1>
+          <p className="auth-subtitle">Login to access your admin dashboard</p>
 
-      <input
-        type="password"
-        value={form.password}
-        onChange={(e) => setForm({ ...form, password: e.target.value })}
-      />
+          <div className="form-group">
+            <label htmlFor="email">Email Address</label>
+            <motion.input
+              whileHover={{ scale: 1.02 }}
+              whileFocus={{ scale: 1.02 }}
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
+            />
+          </div>
 
-      <button type="submit">
-        {loading ? "Logging in..." : "Login"}
-      </button>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <motion.input
+              whileHover={{ scale: 1.02 }}
+              whileFocus={{ scale: 1.02 }}
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              required
+            />
+          </div>
 
-      {error && <p>{error}</p>}
-    </form>
+          {error && (
+            <motion.p 
+              className="auth-error"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              {error}
+            </motion.p>
+          )}
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            type="submit"
+            className="lbtn"
+            disabled={loading}
+          >
+            {loading ? "Logging in..." : "Login"}
+          </motion.button>
+
+          <div className="auth-footer">
+            <p>Don't have an account? 
+              <MotionLink 
+                to="/signup" 
+                whileHover={{ scale: 1.05 }}
+                className="auth-link"
+              >
+                Sign Up
+              </MotionLink>
+            </p>
+          </div>
+        </motion.div>
+      </form>
+    </div>
   );
 }
 

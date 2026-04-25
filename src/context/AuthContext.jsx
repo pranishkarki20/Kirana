@@ -97,6 +97,11 @@ export function AuthProvider({ children }) {
     setUser(null);
   }
 
+  function setUserData(userData) {
+    localStorage.setItem(USER_KEY, JSON.stringify(userData));
+    setUser(userData);
+  }
+
   return (
     <AuthContext.Provider
       value={{
@@ -106,6 +111,7 @@ export function AuthProvider({ children }) {
         login,
         signup,
         logout,
+        setUserData,
       }}
     >
       {children}
