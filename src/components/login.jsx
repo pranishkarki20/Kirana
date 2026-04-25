@@ -7,84 +7,76 @@ import { useAuth } from "../context/AuthContext";
 const MotionLink = motion(Link);
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+
     setLoading(true);
+    setError("");
 
     try {
-      await login({ email, password });
-      navigate("/pages/admin");
+      if (!form.email || !form.password) {
+        setError("Please fill in all fields");
+        setLoading(false);
+        return;
+      }
+
+      // Call backend login API
+      const res = await fetch("http://localhost:3000/api/v1/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Store user data with correct key
+        localStorage.setItem("kinara_user", JSON.stringify(data.user));
+        navigate("/pages/admin");
+      } else {
+        setError(data.message || "Login failed");
+      }
     } catch (err) {
-      setError(err.message);
+      console.error("Login error:", err);
+      setError(err.message || "An error occurred while logging in");
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="pages">
-      <form onSubmit={handleSubmit}>
-        <motion.div
-          className="container1"
-          id="login"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h1>Login</h1>
-          <p className="auth-subtitle">Use your local account to access the admin dashboard.</p>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={form.email}
+        onChange={(e) => setForm({ ...form, email: e.target.value })}
+      />
 
-          <motion.input
-            whileHover={{ scale: 1.1 }}
-            type="email"
-            required
-            value={email}
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      <input
+        type="password"
+        value={form.password}
+        onChange={(e) => setForm({ ...form, password: e.target.value })}
+      />
 
-          <div className="Password">
-            <motion.input
-              whileHover={{ scale: 1.1 }}
-              type="password"
-              required
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+      <button type="submit">
+        {loading ? "Logging in..." : "Login"}
+      </button>
 
-          {error ? <p className="auth-error">{error}</p> : null}
-
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            type="submit"
-            className="lbtn"
-            disabled={loading}
-          >
-            {loading ? "Logging in..." : "Login"}
-          </motion.button>
-
-          <MotionLink to="/" whileHover={{ scale: 1.1 }}>
-            {"<- Back to home"}
-          </MotionLink>
-
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <h3><Link to="/signup">Need an account? Sign up</Link></h3>
-          </motion.div>
-        </motion.div>
-      </form>
-    </div>
+      {error && <p>{error}</p>}
+    </form>
   );
 }
 
 export default Login;
-

@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Category from "./components/Categoryy";
 import Contact from "./pages/contact";
 import Product from "./components/product";
+import ProductPage from "./pages/product";
 import Admin from "./pages/admin";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -33,6 +34,16 @@ function App() {
               </>
             }
           />  
+          <Route
+            path="/pages/product"
+            element={
+              <>
+                <Navbar />
+                <ProductPage />
+                <Footer />
+              </>
+            }
+          />
           <Route
             path="/pages/contact"
             element={

@@ -14,7 +14,7 @@ export default function Signup() {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signup } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   function handleChange(event) {
@@ -31,10 +31,42 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      await signup(formData);
-      navigate("/pages/admin");
+      if (!formData.name || !formData.email || !formData.password) {
+        setError("Please fill in all fields");
+        setLoading(false);
+        return;
+      }
+
+      if (formData.password.length < 6) {
+        setError("Password must be at least 6 characters");
+        setLoading(false);
+        return;
+      }
+
+      // Call backend signup API
+      const res = await fetch("http://localhost:3000/api/v1/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Auto login after signup
+        await login({
+          email: formData.email,
+          password: formData.password
+        });
+        navigate("/pages/admin");
+      } else {
+        setError(data.message || "Signup failed");
+      }
     } catch (err) {
-      setError(err.message);
+      console.error("Signup error:", err);
+      setError(err.message || "An error occurred during signup");
     } finally {
       setLoading(false);
     }

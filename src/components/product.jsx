@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Product.css";
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Product() {
   const product = [
@@ -63,6 +64,8 @@ export default function Product() {
         </div>
 
         <Button
+          component={RouterLink}
+          to="/pages/product"
           variant="outlined"
           sx={{
             margin: "15px auto",
