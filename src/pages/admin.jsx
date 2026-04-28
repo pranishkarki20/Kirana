@@ -20,7 +20,7 @@ function Admin() {
       <div className = "Seller">
         <img src="/pexels-izafi-29148928.jpg" alt="profile" className="profile-img" />
         <div className="Seler">
-        <h4>Hello  Pranish Karki</h4>
+        <h4>Hello {user?.name || 'User'}</h4>
       </div>
     </div>
     </div>
