@@ -21,7 +21,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:4000/api/v1/form', {
+      const response = await fetch('https://backend-s083.onrender.com/api/v1/form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
