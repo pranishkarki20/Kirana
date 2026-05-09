@@ -1,7 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { color } from "framer-motion";
-
+import { useAuth } from "../context/AuthContext"; 
 export default function ANavbar() {
   const { logout } = useAuth();
   const navigate = useNavigate();
@@ -12,8 +10,8 @@ export default function ANavbar() {
   }
 
   const adminitems = [
-    {name : "Home" , link : "/"},
-    {name : "Dashboard" , link : "/#Dashboard"} ,
+    {name : "Home" , link : "/pages/admin"},
+    {name : "Dashboard" , link : "/pages/dashboard"} ,
     {name : "Category" , link : "/#Category"},
     {name : "Product" , link : "/#Product"} ,
   ]
@@ -24,7 +22,7 @@ export default function ANavbar() {
       <ul className="admin-nav" >
         {adminitems.map((item , index) =>(
           <li key = {index}>
-            <a href = {item.link}>{item.name}</a>
+            <Link to={item.link}>{item.name}</Link>
           </li>
         ))}
       </ul>

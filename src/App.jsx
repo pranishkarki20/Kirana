@@ -9,8 +9,8 @@ import Contact from "./pages/contact";
 import Product from "./components/product";
 import ProductPage from "./pages/product";
 import Admin from "./pages/admin";
+import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-
 function App() {
   return (
     <BrowserRouter>
@@ -53,6 +53,22 @@ function App() {
                 </>
             }
           />
+          <Route
+            path="/pages/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/pages/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          /> 
           <Route
             path="/pages/admin"
             element={

@@ -7,6 +7,7 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
+    description: "",
   });
 
   const handlechange = (e) => {
@@ -40,6 +41,7 @@ export default function Contact() {
         name: "",
         email: "",
         phone: "",
+        description: "",
       });
     } catch (error) {
       console.log(error);
@@ -80,6 +82,12 @@ export default function Contact() {
               onChange={handlechange}
             />
 
+            <h3 className = 'name'> Description</h3>
+            <input
+            type="text"
+            name = "description"
+            value= {formData.description}
+            onChange={handlechange}/>
             <motion.button
               whileHover={{ scale: 1.1 }}
               type="submit"
