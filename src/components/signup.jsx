@@ -3,6 +3,7 @@ import "./login.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { AUTH_API_BASE_URL } from "../config/api";
 
 const MotionLink = motion(Link);
 
@@ -14,7 +15,7 @@ export default function Signup() {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { setUserData } = useAuth();
   const navigate = useNavigate();
 
   function handleChange(event) {
@@ -44,7 +45,7 @@ export default function Signup() {
       }
 
       // Call backend signup API
-      const res = await fetch("http://localhost:3000/api/v1/users/signup", {
+      const res = await fetch(`${AUTH_API_BASE_URL}/api/v1/users/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -55,11 +56,7 @@ export default function Signup() {
       const data = await res.json();
 
       if (res.ok) {
-        // Auto login after signup
-        await login({
-          email: formData.email,
-          password: formData.password
-        });
+        setUserData(data.user);
         navigate("/pages/admin");
       } else {
         setError(data.message || "Signup failed");
@@ -139,4 +136,3 @@ export default function Signup() {
     </div>
   );
 }
-

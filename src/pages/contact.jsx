@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './contact.css';
 import { motion } from "framer-motion";
+import { AUTH_API_BASE_URL } from "../config/api";
 
 export default function Contact() {
   const [formData, setformData] = useState({
@@ -21,7 +22,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://backend-s083.onrender.com/api/v1/form', {
+      const response = await fetch(`${AUTH_API_BASE_URL}/api/v1/form`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
