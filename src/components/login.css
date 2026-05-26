@@ -21,9 +21,13 @@ body {
     min-height: 450px;
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.06);
     background-color: white;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
+    transform-origin:center center;
+    transition:transform .32s cubic-bezier(.2,.9,.2,1),box-shadow .32s;
+    will-change:transform,opacity;
+    animation: fade-up .45s cubic-bezier(.2,.9,.2,1) both;
 }
 
 .container1 h1 {
@@ -109,8 +113,8 @@ body {
 }
 
 .lbtn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.12);
 }
 
 .lbtn:disabled {

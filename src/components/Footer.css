@@ -1,15 +1,12 @@
 .footer{
-  background-color:#111;
-  color:white;
-  padding:10px 0;
-  border-radius: 10px;
+  background:var(--surface);
+  color:var(--muted);
+  padding:18px 0 12px 0;
+  border-radius:8px;
+  border-top:1px solid rgba(2,6,23,0.04);
 }
 
-.footer-container{
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-}
+.footer-container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:0 16px}
 
 .footer-section1{
    margin-top: 40px;
@@ -37,17 +34,9 @@
   margin:6px 0;
 }
 
-.footer-section ul li a{
-  text-decoration: none;
-  color: white;
-}
-.footer-section ul li a:hover{
-  color: #00bcd4;
-
-}
-.footer-section ul li:hover{
-  color:#00bcd4;
-}
+.footer-section ul li a{ text-decoration:none;color:var(--text)}
+.footer-section ul li a:hover{color:var(--accent)}
+.footer-section ul li:hover{color:var(--accent)}
 
 .social-icons{
   display:flex;
@@ -56,24 +45,8 @@
   margin-top:10px;
 }
 
-.social-icons a{
-  text-decoration: none;
-  color: white;
-}
+.social-icons a{ text-decoration:none;color:var(--muted)}
+.social-icons svg{cursor:pointer;transition:0.2s}
+.social-icons svg:hover{color:var(--accent);transform:scale(1.08)}
 
-.social-icons svg{
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.social-icons svg:hover{
-  color:#00bcd4;
-  transform:scale(1.2);
-} 
-
-.footer-bottom{
-  text-align:center;
-  margin-top:20px;
-  border-top:1px solid #444;
-  padding-top:10px;
-}
+.footer-bottom{text-align:center;margin-top:18px;border-top:1px solid rgba(2,6,23,0.04);padding-top:12px;color:var(--muted);font-size:0.95rem}

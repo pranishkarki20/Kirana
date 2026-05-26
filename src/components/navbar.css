@@ -1,69 +1,38 @@
-/* Navbar container */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  padding: 9px 40px;
-  color: rgb(0, 0, 0);
-}
-.page-container{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.content{
-  flex: 1;
-}
-/* Logo */
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+/* Navbar component styles - uses variables from index.css */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 24px;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+  border-bottom:1px solid rgba(2,6,23,0.04);
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-/* Navigation links container */
-nav ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
+.page-container{display:flex;flex-direction:column;min-height:100vh}
+.content{flex:1}
 
-/* Links */
-nav ul li a {
-  cursor: pointer;
-  font-size: 16px;
-  transition: color 0.3s;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
+.logo{font-size:1.25rem;font-weight:800;color:var(--accent-2);letter-spacing:0.2px}
 
-/* Hover effect */
-nav ul li a:hover {
-  color: #00bfff;
-}
+.logo{animation:pop .42s cubic-bezier(.2,.9,.2,1) both}
 
-/* Button */
-nav button {
-  background-color:grey;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-  font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-nav button:hover{
-  color: #00bfff;
-}
-.auth-buttons{
-  display: flex;
-  gap: 10px;
-  background-color: transparent;
-  align-items: center;
-}
-.auth-user{
-  font-size: 0.95rem;
-  font-weight: 600;
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links li{list-style:none}
+.nav-links a{display:inline-block;padding:8px 10px;border-radius:8px;color:var(--text);font-weight:600;transition:color .18s, transform .18s}
+.nav-links a:hover{color:var(--accent);background:rgba(59,130,246,0.06);transform:translateY(-2px)}
+
+.auth-buttons{display:flex;gap:10px;align-items:center}
+.auth-user{font-size:0.95rem;font-weight:600;color:var(--muted)}
+
+.login-btn{padding:8px 12px;border-radius:8px;border:0;background:transparent;color:var(--accent);font-weight:700;cursor:pointer}
+.Signup-btn{padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+/* Responsive: collapse navigation on small screens */
+@media (max-width: 768px){
+  .nav-links{display:none}
+  .auth-buttons{gap:6px}
+  .navbar{padding:12px}
 }
