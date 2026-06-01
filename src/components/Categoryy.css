@@ -20,8 +20,8 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); ;
 }
 .product h1{
-    color: rgb(0, 0, 0);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(0, 0, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .home-container{
   text-align: center;
@@ -34,7 +34,7 @@
 
 .Productsitems{
   display: flex;
-  padding : 20px;
+  padding: 20px;
   gap: 60px;
   justify-content: center;
   align-items: stretch;
@@ -45,18 +45,17 @@
   display: flex;
   justify-content: space-around;
   width: 80%;
-  gap : 140px ;
+  gap: 140px;
   padding: 16px;
   border-radius: 10px;
   text-align: center;
   margin-bottom: 10px;
-  list-style:  none;
-
+  list-style: none;
 }
 
 .category a {
   text-decoration: none;
-  color: rgb(0, 0, 0)
+  color: rgb(0, 0, 0);
 }
 
 .category a:hover{
@@ -71,11 +70,10 @@
   height: 120px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .card-icon {

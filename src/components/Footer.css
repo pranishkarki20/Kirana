@@ -1,12 +1,18 @@
 .footer{
-  background:var(--surface);
-  color:var(--muted);
-  padding:18px 0 12px 0;
-  border-radius:8px;
-  border-top:1px solid rgba(2,6,23,0.04);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 18px 0 12px 0;
+  border-radius: 8px;
+  border-top: 1px solid rgba(2, 6, 23, 0.04);
 }
 
-.footer-container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:0 16px}
+.footer-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 0 16px;
+}
 
 .footer-section1{
    margin-top: 40px;
@@ -15,38 +21,65 @@
 
 
 .footer-section{
-  margin:10px;
+  margin: 10px;
 }
 
 .footer-section h3,
 .footer-section h4{
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .footer-section ul{
-  list-style:none;
-  padding:0;
-  margin-top:10px;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
 }
 
 .footer-section ul li{
-  display:block;
-  margin:6px 0;
+  display: block;
+  margin: 6px 0;
 }
 
-.footer-section ul li a{ text-decoration:none;color:var(--text)}
-.footer-section ul li a:hover{color:var(--accent)}
-.footer-section ul li:hover{color:var(--accent)}
+.footer-section ul li a{
+  text-decoration: none;
+  color: var(--text);
+}
+
+.footer-section ul li a:hover{
+  color: var(--accent);
+}
+
+.footer-section ul li:hover{
+  color: var(--accent);
+}
 
 .social-icons{
-  display:flex;
-  gap:15px;
-  font-size:22px;
-  margin-top:10px;
+  display: flex;
+  gap: 15px;
+  font-size: 22px;
+  margin-top: 10px;
 }
 
-.social-icons a{ text-decoration:none;color:var(--muted)}
-.social-icons svg{cursor:pointer;transition:0.2s}
-.social-icons svg:hover{color:var(--accent);transform:scale(1.08)}
+.social-icons a{
+  text-decoration: none;
+  color: var(--muted);
+}
 
-.footer-bottom{text-align:center;margin-top:18px;border-top:1px solid rgba(2,6,23,0.04);padding-top:12px;color:var(--muted);font-size:0.95rem}
+.social-icons svg{
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.social-icons svg:hover{
+  color: var(--accent);
+  transform: scale(1.08);
+}
+
+.footer-bottom{
+  text-align: center;
+  margin-top: 18px;
+  border-top: 1px solid rgba(2, 6, 23, 0.04);
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
