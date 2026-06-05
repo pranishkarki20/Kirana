@@ -60,7 +60,8 @@
   box-shadow: 0 12px 34px rgba(2, 6, 23, 0.12);
 }
 .dropdown {
-  padding: 10px 15px;
+
+  width: 60px;
   font-size: 16px;
   border-radius: 8px;
   border: 2px solid black;
