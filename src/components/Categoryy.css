@@ -1,6 +1,6 @@
 .product{
   margin-top: 2px;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   background-size: cover;
@@ -10,6 +10,8 @@
   max-width: 100%;
 }
 .product-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit , minmax(240px, 1fr));
   width: 220px;
   padding: 16px;
 }
@@ -44,7 +46,7 @@
 .category{
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  width: 100%;
   gap: 140px;
   padding: 16px;
   border-radius: 10px;

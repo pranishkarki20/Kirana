@@ -10,11 +10,18 @@
 }
 .Productitems{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  flex-wrap: nowrap;
   padding: 14px;
   gap: 24px;
+}
+@media (max-width: 460px) {
+  .Productsitems {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .product-message {
   width: 100%;
@@ -32,12 +39,18 @@
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
-  background: white;
+  background: rgb(113, 71, 71);
   transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms;
   will-change: transform;
   opacity: 0;
   transform: translateY(8px) scale(0.998);
   animation: fade-up .45s ease both;
+}
+
+@media (max-width: 480px){
+  .card{ 
+    width:100% ;}
+
 }
 .text{
   margin-bottom: 10px;
@@ -60,8 +73,7 @@
   box-shadow: 0 12px 34px rgba(2, 6, 23, 0.12);
 }
 .dropdown {
-
-  width: 60px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 8px;
   border: 2px solid black;
