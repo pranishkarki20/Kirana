@@ -57,37 +57,35 @@ export default function Contact() {
         <div className='Row'>
           <motion.div whileHover={{ scale: 1.1 }} className='scontainer'>
             <h4>Fill the Form</h4>
-
-            <h3 className="name">Full Name</h3>
             <motion.input
               whileHover={{ scale: 1.1 }}
               type="text"
               name="name"
+              placeholder='Full Name'
               value={formData.name}
               onChange={handlechange}
             />
-
-            <h3 className="name">Email</h3>
             <input
               type="email"
               name="email"
+              placeholder='Email'
               value={formData.email}
               onChange={handlechange}
             />
 
-            <h3 className='name'>Phone Number</h3>
             <input
               type="tel"
               name="phone"
+              placeholder='Phone Number'
               value={formData.phone}
               onChange={handlechange}
             />
 
-            <h3 className = 'name'> Description</h3>
             <input
             type="text"
             name = "description"
             value= {formData.description}
+            placeholder='Any Queries'
             onChange={handlechange}/>
             <motion.button
               whileHover={{ scale: 1.1 }}
