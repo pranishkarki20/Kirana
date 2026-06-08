@@ -11,9 +11,13 @@
   box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container h1{
+.container h4{
   color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
   margin-bottom: 20px;
+  padding-right: 40px;
 }
 
 .Containner{
@@ -36,10 +40,13 @@
   width: 500px;
   box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
 }
-input{
+input {
   margin-left: 20px;
   margin-bottom: 10px;
-  width: 300px;
+  width: calc(100% - 40px);  /* Fill container minus margins */
+  padding: 8px;              /* Add padding for better UX */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 .scontainer h1{
   margin-bottom: 10px;

@@ -56,7 +56,7 @@ export default function Contact() {
         <h1>Contact Us</h1>
         <div className='Row'>
           <motion.div whileHover={{ scale: 1.1 }} className='scontainer'>
-            <h1>Fill the Form</h1>
+            <h4>Fill the Form</h4>
 
             <h3 className="name">Full Name</h3>
             <motion.input

@@ -10,6 +10,7 @@
   max-width: 100%;
 }
 .product-container{
+  justify-content: center;
   display: flex;
  flex-wrap: wrap;
   width: 100%;
@@ -26,11 +27,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .home-container{
-  text-align: center;
-}
-
-.product-container{
-  width: 100%;
   text-align: center;
 }
 
