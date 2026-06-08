@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './products.css'
 export default function Product() {
      const products = [
     { id: 1, name: "Macbook", image: "/mac.jpg", price: "$1000", category: "mobile" },
@@ -12,14 +12,17 @@ export default function Product() {
   const [product] = useState(products);
   return (
     <main>
+      <section className="Product">
         {product.map((item) => (
+          <div className="card">
             <div key={item.id}> 
             <img src={item.image} width="150" alt={item.name} />
             <h2>{item.name}</h2>
             <p>{item.price}</p>
             <p>{item.category}</p>
             </div>
-        ))}
+            </div>
+        ))}</section>
     </main>
   );
 }

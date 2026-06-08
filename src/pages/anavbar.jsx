@@ -13,7 +13,7 @@ export default function ANavbar() {
     {name : "Home" , link : "/pages/admin"},
     {name : "Dashboard" , link : "/pages/dashboard"} ,
     {name : "Category" , link : "/#Category"},
-    {name : "Product" , link : "/#Product"} ,
+    {name : "Product" , link : "/pages/product"} ,
   ]
 
   return (
