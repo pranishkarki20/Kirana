@@ -35,21 +35,30 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-left: 20px;
-  width: 500px;
+  width: 600px;
   box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 input {
-  margin-left: 20px;
+  margin-left: 2px;
   margin-bottom: 10px;
-  width: calc(100% - 40px);  /* Fill container minus margins */
   padding: 8px;              /* Add padding for better UX */
-  border: 1px solid #ccc;
+  border: 1px solid #3c3434;
   border-radius: 4px;
+}
+
+textarea[name="description"]{
+  width: 300px;
+  min-height: 150px;
+  text-align: left;
+  padding: 8px;
+  resize: vertical;
 }
 .scontainer h1{
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .scontainer h6{
@@ -72,7 +81,6 @@ input {
   flex-direction: column;
   align-items: flex-start;
   padding: 14px 12px 18px;
-  box-shadow: 7px -8px 20px rgba(119, 98, 98, 0.2);
 }
 
 .text-center{
@@ -138,8 +146,8 @@ form input{
   margin-top: 2px;
   width: 300px;
   border-radius: 5px;
-  text-align: center;
-  background-color: rgb(229, 233, 237);
+  text-align: left;
+  background-color: rgb(18, 21, 25);
   padding: 8px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
