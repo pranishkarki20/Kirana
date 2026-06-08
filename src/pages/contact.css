@@ -1,5 +1,5 @@
 .container {
-  width: 1200px;
+  width: 100%;
   margin: auto;
   padding: 20px;
   border: 2px solid rgb(255, 255, 255);
@@ -10,6 +10,7 @@
   flex-direction: column;
   box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .container h4{
   color: black;
@@ -32,6 +33,7 @@
 }
 
 .scontainer {
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -50,7 +52,7 @@ input {
 }
 
 textarea[name="description"]{
-  width: 300px;
+  width: 100%;
   min-height: 150px;
   text-align: left;
   padding: 8px;
@@ -74,7 +76,7 @@ textarea[name="description"]{
   margin-bottom: 0px;
 }
 .ncontainer{
-  width: 250px;
+  width: 100%;
   min-height: 240px;
   border-radius: 10px;
   display: flex;
@@ -97,14 +99,14 @@ textarea[name="description"]{
   margin: 0 0 4px 8px;
   font-size: 0.95rem;
   color: rgb(0, 0, 0);
-  font-weight: 800;
+  font-weight: 200px;
 }
 
 .info-value{
   margin: 0 0 20px 8px;
   font-size: 1rem;
   color: rgb(70, 70, 62);
-  font-weight: 700;
+  font-weight: normal;
 }
 
 .btn1 {
@@ -152,3 +154,17 @@ form input{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  .Row{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .scontainer,
+  .ncontainer{
+    width: 100%;
+    max-width: 100%;
+  }
+  
+}
