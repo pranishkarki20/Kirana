@@ -31,8 +31,8 @@ export default function Offer() {
       </div>
       <div className='Off'> 
        <h2> 15% off  <br/>
-       on Every Fashion Accessories  </h2>
-       <p>Use the Cupoon Code "FASHXT34"</p> 
+       on Every Kitechen Accessories  </h2>
+       <p>Use the Cupoon Code "FAXT45"</p> 
        <CheckroomIcon sx= {{fontSize: {xs:60 , md :100}}}/>
       </div>
       

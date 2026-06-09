@@ -32,25 +32,28 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      if (!formData.name || !formData.email || !formData.password) {
+      if (!formData.name.trim() || !formData.email.trim() || !formData.password.trim()) {
         setError("Please fill in all fields");
         setLoading(false);
         return;
       }
 
-      if (formData.password.length < 6) {
+      if (formData.password.trim().length < 6) {
         setError("Password must be at least 6 characters");
         setLoading(false);
         return;
       }
 
-      // Call backend signup API
       const res = await fetch(`${AUTH_API_BASE_URL}/api/v1/users/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          password: formData.password,
+        })
       });
 
       const data = await res.json();

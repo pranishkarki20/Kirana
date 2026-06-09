@@ -3,6 +3,7 @@ import "./login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { AUTH_API_BASE_URL } from "../config/api";
 
 const MotionLink = motion(Link);
 
@@ -32,7 +33,7 @@ function Login() {
       }
 
       // Call backend login API
-      const res = await fetch("https://backend-s083.onrender.com/api/v1/users/login", {
+      const res = await fetch(`${AUTH_API_BASE_URL}/api/v1/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

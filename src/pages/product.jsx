@@ -16,7 +16,7 @@ export default function Product() {
     <main>
       <section className="Product">
         {product.map((item) => (
-          <div className="card">
+          <div className="Card">
             <div key={item.id}> 
             <img src={item.image} width="150" alt={item.name} />
             <h2>{item.name}</h2>

@@ -9,7 +9,6 @@ function Navbar() {
   const {cart} = useCart() ;
   const navitems = [
     { name: "Home", link: "/" },
-    { name: "Category", link: "/#category" },
     { name: "Products", link: "/pages/product" },
     { name: "Contact", link: "/pages/contact" }
   ];

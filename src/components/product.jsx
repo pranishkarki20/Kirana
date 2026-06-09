@@ -62,8 +62,8 @@ export default function Product() {
             </motion.div>
           ))}
         </div>
-
-        <Button
+      </div>
+      <Button
           component={RouterLink}
           to="/pages/product"
           variant="outlined"
@@ -75,7 +75,6 @@ export default function Product() {
         >
           View all products
         </Button>
-      </div>
     </section>
   );
 }

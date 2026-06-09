@@ -4,7 +4,6 @@ import Login from "./components/login";
 import Signup from "./components/signup";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Category from "./components/Categoryy";
 import Contact from "./pages/contact";
 import Product from "./components/product";
 import ProductPage from "./pages/product";
@@ -26,9 +25,6 @@ function App() {
                 <Navbar />
                 <main className="content">
                   <Home />
-                  <section id="category">
-                    <Category />
-                  </section>
                   <section id="Product">
                     <Product />
                   </section>
