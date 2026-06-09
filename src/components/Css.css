@@ -1,5 +1,6 @@
 .home{
   height: 500px;
+  width : 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +11,12 @@
   overflow: hidden;
   margin-bottom: 50px;
 }
+@media(max-width: 768px){
+  .home {
+    width: 100% ; 
+    height: 160px;
+  }
+}
 .home h1{
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,6 +25,12 @@
   color: white;
   font-weight: 200;
   font-family: 'Times New Roman', Times, serif;
+  font-size: 1.6rem ;
+}
+@media (max-width : 768px ) {
+  .home h1 {
+    font-size: 0.9rem;
+  }
 }
 .home-container{
   text-align: center;
@@ -38,8 +51,10 @@
 @media (max-width: 768px){
   .bg-video{
     width: 100%;
+    height: 250px;
   }
 }
+
 .content {
   position: relative;
   z-index: 1;

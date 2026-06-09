@@ -53,9 +53,10 @@
 }
 @media(max-width:460px){
   .category{
+    display: grid;
     width: 100%;
     flex-direction: column;
-    justify-content: center;
+    grid-template-columns: repeat(2 , 1fr);
     align-items: center;
     gap: 6px;
     padding-left: 50px;
