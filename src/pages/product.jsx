@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './products.css'
+import { useCart } from "../context/cartContext";
 export default function Product() {
      const products = [
     { id: 1, name: "Macbook", image: "/mac.jpg", price: "$1000", category: "mobile" },
@@ -10,6 +11,7 @@ export default function Product() {
   ];
   
   const [product] = useState(products);
+  const {addtoCart} = useCart();
   return (
     <main>
       <section className="Product">
@@ -19,7 +21,7 @@ export default function Product() {
             <img src={item.image} width="150" alt={item.name} />
             <h2>{item.name}</h2>
             <p>{item.price}</p>
-            <p>{item.category}</p>
+            <button onClick={() => addtoCart(item)}>Add to card</button>
             </div>
             </div>
         ))}</section>

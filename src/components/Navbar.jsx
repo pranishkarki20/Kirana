@@ -2,10 +2,11 @@ import './navbar.css';
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
+import { useCart } from '../context/cartContext';
 
 function Navbar() {
   const { isAuthenticated, user, logout } = useAuth();
-
+  const {cart} = useCart() ;
   const navitems = [
     { name: "Home", link: "/" },
     { name: "Category", link: "/#category" },
@@ -29,6 +30,9 @@ function Navbar() {
           </motion.li>
         ))}
       </ul>
+      <div className='cart-info'>
+        🛒 {cart.length}
+      </div>
       <div className="auth-buttons">
         {isAuthenticated ? (
           <>

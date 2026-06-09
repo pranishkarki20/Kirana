@@ -11,11 +11,13 @@ import ProductPage from "./pages/product";
 import Admin from "./pages/admin";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { CartProvider } from "./context/cartContext";
 function App() {
   return (
     <BrowserRouter>
-      <div className="page-container">
-        <Routes>
+      <CartProvider>
+        <div className="page-container">
+          <Routes>
           <Route
             path="/"
             element={
@@ -94,6 +96,7 @@ function App() {
           />
         </Routes>
       </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }
