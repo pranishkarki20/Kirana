@@ -2,11 +2,16 @@
  display: flex;
  flex-direction: row;
  margin-top: 20px;
+ width: 100%;
+ justify-content: space-around;
 }
 @media (max-width: 768px){
     .Product{
-        align-items: center;
+        display:grid;
+        width: 100%;
         flex-direction: column;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
     }
 }
 .card{
