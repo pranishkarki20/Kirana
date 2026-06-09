@@ -14,6 +14,11 @@
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.home h3{
+  color: white;
+  font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
+}
 .home-container{
   text-align: center;
 }

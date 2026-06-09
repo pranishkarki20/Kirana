@@ -16,15 +16,8 @@ return (
            >
         <source src = "/product.mp4"/>
     </motion.video>
-    <h1>Products</h1>
-    <motion.button
-    whileHover={{
-        scale: 1.1
-    }}
-    whileTap={{
-        scale: 0.9
-    }}
-    className='btn' >Shop</motion.button>
+     <h3 > Welcome  to Kinara </h3>
+    <h1> Get 10 % Off On your First Order </h1>
     </div>
     
     </section></div>
