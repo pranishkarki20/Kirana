@@ -50,7 +50,7 @@
 }
 @media (max-width: 768px){
   .bg-video{
-    width: 100%;
+    width: fit-content;
     height: 250px;
   }
 }

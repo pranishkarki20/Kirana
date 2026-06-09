@@ -12,6 +12,7 @@ import Admin from "./pages/admin";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { CartProvider } from "./context/cartContext";
+import Offer from "./components/offers";
 function App() {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ function App() {
                   <section id="Product">
                     <Product />
                   </section>
+                  <Offer />
                 </main>
                 <Footer />
               </>
