@@ -32,7 +32,7 @@ function Login() {
       }
 
       // Call backend login API
-      const res = await fetch("http://localhost:4000/api/v1/users/login", {
+      const res = await fetch("https://backend-s083.onrender.com/api/v1/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
