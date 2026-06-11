@@ -18,17 +18,21 @@
 }
 .Productitems{
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: stretch;
   padding: 14px;
   gap: 24px;
-  overflow-x: auto ;
-  white-space: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 @media (max-width: 758px) {
   .Productitems {
     width: 100%;
-   
+    overflow-x: auto;
+    flex-wrap: nowrap;
   }
 }
 .product-message {
@@ -57,9 +61,10 @@
 
 @media (max-width: 480px){
   .Card{ 
-    width:70% ;
-   height: 40px;}
-
+    width: 70%;
+    min-height: 340px;
+    height: auto;
+  }
 }
 .text{
   margin-bottom: 10px;
