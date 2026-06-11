@@ -1,21 +1,73 @@
+
 .Product{
  display: flex;
- flex-direction: row;
+ flex-direction: column;
   width: 100%;
  justify-content: space-around;
 }
 @media (max-width: 768px){
     .Product{
-        display:grid;
+        display:flex;
         width: 100%;
-        flex-direction: column;
+        flex-direction: row;
         grid-template-columns: repeat(2,1fr);
         gap: 20px;
     }
 }
+.search-wrapper{
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    margin: 20px 0;
+    gap : 10px;
+}
+.search-input{
+    width: 100%;
+    max-width: 90%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.search-input:hover{
+    border-color: rgb(224, 27, 27);
+
+}
+@media(max-width: 768px){
+    .search-wrapper{
+        display: grid;
+    }
+}
+.Products{
+ display: flex;
+ flex-direction: row;
+  width: 100%;
+ justify-content: space-around;
+}
+@media(max-width: 767px){
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(2 , minmax(0,3fr));
+        gap: 20px;
+    }
+}
+@media(max-width: 768px){
+    .Products{
+        display: grid;
+        grid-template-columns: repeat(3 ,3fr);
+        gap: 30px;
+    }
+}
+@media(min-width: 1024px){
+    .Products{
+        display: flex;
+        gap: 30px;
+    }
+}
 .card{
-    height: fit-content;
+    width: fit-content;
+    min-height: 320px;
     border-radius: 10px;
+    gap :20px
 }
 
 button{

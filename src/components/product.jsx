@@ -63,18 +63,7 @@ export default function Product() {
           ))}
         </div>
       </div>
-      <Button
-          component={RouterLink}
-          to="/pages/product"
-          variant="outlined"
-          sx={{
-            margin: "15px auto",
-            color: "black",
-            borderColor: "black"
-          }}
-        >
-          View all products
-        </Button>
+      
     </section>
   );
 }
