@@ -1,91 +1,28 @@
-.product{
+.Products {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.product {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 20px;
 }
-@media (max-width: 758px) {
-  .product {
-    width: 100%;
-   
+
+.product h1 {
+  color: black;
+  text-align: flex-start;
+  margin:30px 0;
+}
+@media (max-width: 768px) {
+  h1{
+    text-align: left;
   }
+  
 }
 
-.product h1{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.Productitems{
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding: 14px;
-  gap: 24px;
-  overflow-x: auto;
-  width: 100%;
-  max-width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-@media (max-width: 758px) {
-  .Productitems {
-    width: 100%;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-  }
-}
-.product-message {
-  width: 100%;
-  text-align: center;
-  color: #444;
-  font-size: 16px;
-}
-.Card {
-  width: 240px;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
-  background: rgb(224, 224, 224);
-  transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms;
-  will-change: transform;
-  opacity: 0;
-  transform: translateY(8px) scale(0.998);
-  animation: fade-up .45s ease both;
-}
-
-@media (max-width: 480px){
-  .Card{ 
-    width: 70%;
-    min-height: 340px;
-    height: auto;
-  }
-}
-.text{
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 3px;
-}
-
-.Card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-}
-
-.Price{
-  color: rgb(76, 91, 91);
-}
-.Card:hover{
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 34px rgba(2, 6, 23, 0.12);
-}
 .dropdown {
   width: fit-content;
   padding: 10px;
@@ -95,41 +32,73 @@
   outline: none;
   cursor: pointer;
   margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
 }
 
-.dropdown:hover {
-  border-color: rgb(148, 57, 57);
+.Productitems {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 14px 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-.dropdown:focus {
-  border-color: blue;
-}
-.dropdown option {
-  font-size: 13px;
-  border-radius: 30px;
-}
-.Productitems .Card{
-  animation-duration: .45s;
-  animation-fill-mode: both;
+.Productitems::-webkit-scrollbar {
+  height: 8px;
 }
 
-.Productitems .Card:nth-child(1){
-  animation-delay: 0s;
+.Productitems::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
 }
 
-.Productitems .Card:nth-child(2){
-  animation-delay: 0.05s;
+.Productitems::-webkit-scrollbar-track {
+  background: #eee;
 }
 
-.Productitems .Card:nth-child(3){
-  animation-delay: 0.1s;
+.Card {
+  flex: 0 0 240px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(224, 224, 224);
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  transition: transform 0.3s ease;
 }
 
-.Productitems .Card:nth-child(4){
-  animation-delay: 0.15s;
+.Card:hover {
+  transform: translateY(-8px);
 }
 
-.Productitems .Card:nth-child(5){
-  animation-delay: 0.2s;
+.Card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.Price {
+  margin-top: 5px;
+  text-align: center;
+  color: rgb(76, 91, 91);
+}
+
+.button {
+  margin: 10px auto !important;
+}
+
+@media (max-width: 480px) {
+  .Card {
+    flex: 0 0 220px;
+  }
 }

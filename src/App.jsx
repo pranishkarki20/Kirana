@@ -12,6 +12,7 @@ import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { CartProvider } from "./context/cartContext";
 import Offer from "./components/offers";
+import Testimony from "./components/testimony";
 function App() {
   return (
     <BrowserRouter>
@@ -29,11 +30,13 @@ function App() {
                     <Product />
                   </section>
                   <Offer />
+                  <Testimony/>
                 </main>
                 <Footer />
               </>
             }
           />  
+
           <Route
             path="/pages/product"
             element={
@@ -53,6 +56,7 @@ function App() {
                 </>
             }
           />
+          
           <Route
             path="/pages/admin"
             element={

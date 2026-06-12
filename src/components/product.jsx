@@ -32,7 +32,6 @@ export default function Product() {
           <option value="mobile">Electronics</option>
           <option value="clothes">Clothes</option>
         </select>
-
         <div className="Productitems">
           {filterproducts.map((item) => (
             <motion.div
