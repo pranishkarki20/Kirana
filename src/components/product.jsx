@@ -1,6 +1,7 @@
 import "./Product.css";
 import { useState } from "react";
 import { useCart } from "../context/cartContext";
+import { Link } from "react-router-dom";
 
 export default function Product() {
   const product = [
@@ -45,6 +46,13 @@ export default function Product() {
               </button>
             </div>
           ))}
+        </div>
+        <div className="btn">
+          <Link to="/pages/product">
+        <button>
+          View all products
+        </button>
+        </Link>
         </div>
       </div>
       

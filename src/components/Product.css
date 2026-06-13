@@ -63,13 +63,18 @@
 }
 
 .button {
-  margin-top: auto !important;
-  width: 100% !important;
+  margin-top: 10px;
+  display: flex;
+  place-self: center;
+  width: 100% ;
   border-radius: var(--radius) !important;
   box-shadow: none !important;
   text-transform: none !important;
 }
-
+.btn{
+  margin-top: 10px ;
+  place-self: center;
+}
 @media (max-width: 640px) {
   .product {
     padding: 40px 16px;
