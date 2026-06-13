@@ -6,6 +6,11 @@
   margin: 0 auto;
   padding: 48px 24px;
 }
+@media(max-width:768px){
+  .checkout{
+    display: grid;
+  }
+}
 
 .checkout h1 {
   margin-bottom: 24px;
@@ -24,6 +29,12 @@
 display: flex;
 gap: 40px;
 }
+@media(max-width:768px){
+  .it{
+    display: grid;
+  }
+}
+
 
 .check{
   padding: 10px;
