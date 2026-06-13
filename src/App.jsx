@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Contact from "./pages/contact";
 import Product from "./components/product";
 import ProductPage from "./pages/product";
+import Checkout from "./pages/checkout";
 import Admin from "./pages/admin";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -56,6 +57,25 @@ function App() {
                 </>
             }
           />
+          <Route
+            path="/pages/checkout"
+            element={
+              <>
+                <Navbar />
+                <Checkout />
+              </>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Navbar />
+                <Checkout />
+              </>
+            }
+          />
+          
           
           <Route
             path="/pages/admin"

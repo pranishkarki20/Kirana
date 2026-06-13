@@ -1,9 +1,6 @@
-import { motion } from "framer-motion";
-import { Button } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Product.css";
 import { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { useCart } from "../context/cartContext";
 
 export default function Product() {
   const product = [
@@ -15,6 +12,7 @@ export default function Product() {
   ];
 
   const [category, setCategory] = useState("all");
+  const { addtoCart } = useCart();
 
   const filterproducts = product.filter((item) => {
     return category === "all" || item.category === category;
@@ -34,31 +32,18 @@ export default function Product() {
         </select>
         <div className="Productitems">
           {filterproducts.map((item) => (
-            <motion.div
+            <div
               key={item.id}
-              whileHover={{ scale: 1.1 }}
               className="Card"
             >
               <img src={item.image} alt={item.name} className="imges" />
               <div className="text">{item.name}</div>
               <div className="Price">{item.price}</div>
 
-              <Button
-                className="button"
-                variant="contained"
-                startIcon={<ShoppingCartIcon />}
-                style={{
-                  margin: "10px auto",
-                  display: "flex",
-                  justifyContent: "center",
-                  color: "black",
-                  background: "white",
-                  width: "160px"
-                }}
-              >
+              <button className="button" onClick={() => addtoCart(item)}>
                 Add to Cart
-              </Button>
-            </motion.div>
+              </button>
+            </div>
           ))}
         </div>
       </div>

@@ -1,169 +1,69 @@
 .container {
-  width: 100%;
-  margin: auto;
-  padding: 20px;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 10px;
-  margin-top: 100px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
 }
 
-
-.container h4{
-  color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  margin-bottom: 20px;
-  padding-right: 40px;
+.container h1 {
+  margin-bottom: 24px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 
-.Containner{
-  display: flex;
-  justify-content: flex-end;
+.Row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  align-items: start;
 }
 
-.Row{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.scontainer,
+.ncontainer {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
-.scontainer{
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 20px;
-  width: 600px;
-  box-shadow: 7px -8px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-}
-input {
-  margin-left: 2px;
-  margin-bottom: 10px;
-  padding: 8px;              /* Add padding for better UX */
-  border: 1px solid #3c3434;
-  border-radius: 4px;
-}
-
-textarea[name="description"]{
-  width: 100%;
-  min-height: 150px;
-  text-align: left;
-  padding: 8px;
-  resize: vertical;
-}
-.scontainer h1{
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.scontainer h6{
-  text-align: left;
-  color: black;
-  margin-bottom: 0px;
-}
-.name{
-  text-align: left;
-  align-self: flex-start;
-  margin-bottom: 3px;
-  margin-left: 30px;
-  margin-bottom: 0px;
-}
-.ncontainer{
-  width: 300px;
-  min-height: 240px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 14px 12px 18px;
-}
-
-.text-center{
-  padding: 10px 0 18px;
-  align-self: center;
-  text-align: center;
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: black;
-  margin: 0;
-}
-
-.info-label{
-  margin: 0 0 4px 8px;
-  font-size: 0.95rem;
-  color: rgb(0, 0, 0);
-  font-weight: 200px;
-}
-
-.info-value{
-  margin: 0 0 20px 8px;
-  font-size: 1rem;
-  color: rgb(70, 70, 62);
-  font-weight: normal;
-}
-
-.btn1 {
-  margin-top: 10px;
-  margin-left: 21px;
-  font-size: 1rem;
-  width: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.btn1:hover {
-  color: black;
-  background-color: transparent;
-}
-
-form {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.scontainer {
+  display: grid;
   gap: 12px;
 }
 
-form > div{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.scontainer h4 {
+  margin-bottom: 4px;
 }
 
-form input{
-  margin-top: 2px;
-  width: 300px;
-  border-radius: 5px;
-  text-align: left;
-  background-color: rgb(18, 21, 25);
-  padding: 8px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+textarea[name="description"] {
+  min-height: 140px;
+  resize: vertical;
 }
 
-@media (max-width: 768px) {
-  .Row{
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.btn1 {
+  width: fit-content;
+  margin-top: 6px;
+}
+
+.info-label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.info-value {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+form {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding: 32px 16px;
   }
 
-  .scontainer,
-  .ncontainer{
-    width: 100%;
-    max-width: 100%;
+  .Row {
+    grid-template-columns: 1fr;
   }
-  
 }

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './contact.css';
-import { motion } from "framer-motion";
 import { AUTH_API_BASE_URL } from "../config/api";
 
 export default function Contact() {
@@ -55,10 +54,9 @@ export default function Contact() {
       <div className='container' id="contact">
         <h1>Contact Us</h1>
         <div className='Row'>
-          <motion.div whileHover={{ scale: 1.1 }} className='scontainer'>
+          <div className='scontainer'>
             <h4>Fill the Form</h4>
-            <motion.input
-              whileHover={{ scale: 1.1 }}
+            <input
               type="text"
               name="name"
               placeholder='Full Name'
@@ -87,14 +85,13 @@ export default function Contact() {
               placeholder='Any Queries'
               onChange={handlechange}
             />
-            <motion.button
-              whileHover={{ scale: 1.1 }}
+            <button
               type="submit"
               className='btn1'
             >
               Submit
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
 
           <div className='ncontainer'>
             <h2 className="info-label">Phone Number</h2>

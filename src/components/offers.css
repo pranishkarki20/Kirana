@@ -1,55 +1,47 @@
 .Offers {
-    padding: 24px;
-    display: flex;
-    flex-direction:  column;
-    background-color: rgb(58, 87, 176);
-    border-radius: 10px;
-    margin-right: 10px ;
-    margin-left: 10px;
-    overflow-x: auto ;
-    white-space: nowrap;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px 56px;
 }
+
 .offe h2 {
-    text-align: start;
-}
-.offrs{
-    padding: 24px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    margin-right: 10px ;
-    margin-left: 10px;
-    overflow-x: auto ;
-    white-space: nowrap;
+  margin-bottom: 18px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
-.firstoder {
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 16px;
-    width: fit-content;
-    margin-right: 25px;
-    font-size: 2rem;
-    background-color: azure;
-
+.offrs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
-.firstoder p {
-    font-size: 1rem;
+.firstoder,
+.Off {
+  min-height: 180px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
-.Off{ 
-    padding: 16px;
-    border-radius: 10px;
-    border : 1px solid black;
-    color: black ;
-    width:  500px;
-    margin-left: 50px ;
-    justify-content: center;
-    background-color: aliceblue;
+.firstoder h1,
+.Off h2 {
+  margin-bottom: 8px;
+  font-size: 1.35rem;
 }
 
-.off h1{
-    text-align: center;
-    font-size: 1 rem;
+.firstoder p,
+.Off p {
+  color: var(--muted);
+}
+
+.Off svg {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .Offers {
+    padding: 8px 16px 40px;
+  }
 }

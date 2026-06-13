@@ -1,65 +1,40 @@
 .testemony {
-    padding: 30px;
-    width: 98%;
-    margin-top: 30px;
-    margin: 20px auto;
-    padding: 0px;
-    border-radius: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 56px;
 }
 
 .testemony h1 {
-    text-align: center;
-    margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
-.testemny { 
-    border-radius: 10px;
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
-}
-
-.testemny::-webkit-scrollbar {
-    height: 8px;
-}
-
-.testemny::-webkit-scrollbar-thumb {
-    background: gray;
-    border-radius: 10px;
+.testemny {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .ard {
-    min-width: 400px;
-    flex-shrink: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: white;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .ard h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: lighter;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 .ard p {
-    color: black;
-    font-size: 0.9rem;
-    max-width: 300px;
-    line-height: 1.6;
-    text-align: center;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
-@media (max-width:768px){
-    .ard{ 
-        width: 200px;
-    }
+
+@media (max-width: 640px) {
+  .testemony {
+    padding: 0 16px 40px;
+  }
 }

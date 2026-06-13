@@ -1,86 +1,62 @@
+.Product {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
 
-.Product{
- display: flex;
- flex-direction: column;
+.all {
   width: 100%;
- justify-content: space-around;
-}
-@media (max-width: 768px){
-    .Product{
-        display:flex;
-        width: 100%;
-        flex-direction: row;
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-    }
-}
-.search-wrapper{
-    display: flex;
-    justify-content:center;
-    flex-direction: row;
-    margin: 20px 0;
-    gap : 10px;
-}
-.search-input{
-    width: 100%;
-    max-width: 90%;
-    padding: 10px;
-    font-size: 1rem;
 }
 
-.search-input:hover{
-    border-color: rgb(224, 27, 27);
+.search-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 12px;
+  margin-bottom: 28px;
+}
 
+.product-page-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 20px;
 }
-@media(max-width: 768px){
-    .search-wrapper{
-        display: grid;
-    }
+
+.card {
+  min-height: 100%;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
-.Products{
- display: flex;
- flex-direction: row;
+
+.card img {
   width: 100%;
- justify-content: space-around;
-}
-@media(max-width: 767px){
-    .Products{
-        display: grid;
-        grid-template-columns: repeat(2 , minmax(0,3fr));
-        gap: 20px;
-    }
-}
-@media(max-width: 768px){
-    .Products{
-        display: grid;
-        grid-template-columns: repeat(3 ,3fr);
-        gap: 30px;
-    }
-}
-@media(min-width: 1024px){
-    .Products{
-        display: flex;
-        gap: 30px;
-    }
-}
-.card{
-    width: fit-content;
-    min-height: 320px;
-    border-radius: 10px;
-    gap :20px
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #f3f4f6;
 }
 
-button{
-    background-color: black;
-    color: white;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 10px;
-    display: block;
-    font: 1.5rem;
+.card h2 {
+  margin: 14px 0 6px;
+  font-size: 1.05rem;
 }
 
-button:hover{
-    background-color: white;
-    color: black;
+.card p {
+  margin-bottom: 14px;
+  color: var(--muted);
+}
+
+.card button {
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .Product {
+    padding: 32px 16px;
+  }
+
+  .search-wrapper {
+    grid-template-columns: 1fr;
+  }
 }

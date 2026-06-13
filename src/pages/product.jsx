@@ -41,14 +41,14 @@ export default function Product() {
           </select>
         </div>
         </div>
-        <div className="Products">
-        {searchfilter.map((item , index) =>(
-          <div className="card">
-            <div key={item.id}> 
+        <div className="product-page-products">
+        {searchfilter.map((item) =>(
+          <div className="card" key={item.id}>
+            <div> 
             <img src={item.image} width="150" alt={item.name} />
             <h2>{item.name}</h2>
             <p>{item.price}</p>
-            <button onClick={() => addtoCart(item)}>Add to card</button>
+            <button onClick={() => addtoCart(item)}>Add to cart</button>
             </div>
           </div>
 

@@ -2,8 +2,7 @@ import React from 'react'
 import './testimony.css'
 export default function Testimony() {
   return (
-    <div className='testemony'>
-        <div className='testemony'>
+    <section className='testemony'>
             <h1>Customer Feedback </h1>
         <div className=' testemny'>
         <div className='ard'>
@@ -36,7 +35,6 @@ export default function Testimony() {
             </p>
             </div>
         </div>
-    </div>
-    </div>
+    </section>
   )
 }

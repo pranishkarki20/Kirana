@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { CartContext } from "../context/cartContext";
-
+import { useCart } from "../context/cartContext";
+import "./checkout.css";
+import "./checkout.css"
 export default function Checkout() {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
 
   return (
     <div className="checkout">

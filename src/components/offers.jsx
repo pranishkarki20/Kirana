@@ -5,34 +5,29 @@ import KitechenIcon from '@mui/icons-material/Kitchen';
 export default function Offer() {
   return (
     <section className='Offers'>
-        <diV className = "offe">
-             <h2> Offers</h2>
-        </diV>
+        <div className="offe">
+          <h2>Current Offers</h2>
+        </div>
         <div className='offrs'>
       <div className='firstoder'>
         <h1>
-          Get
-          <br />
-          10 % off <br/>
-          <p> On  your very First order</p>
+          10% off
         </h1>
+        <p>On your first order</p>
       </div>
       <div className='Off'> 
-       <h2> 5% off  <br/>
-       on Every Electronic Accessories  </h2>
-       <p>Use the Cupoon Code "MMMXT34"</p> 
+       <h2>5% off electronics</h2>
+       <p>Use coupon MMMXT34</p> 
        <LaptopMacIcon sx= {{fontSize : {xs: 60 , md :100}}}/>
       </div>
       <div className='Off'> 
-       <h2> 25% off  <br/>
-       on Every Fashion Accessories  </h2>
-       <p>Use the Cupoon Code "FASHXT34"</p> 
+       <h2>25% off fashion</h2>
+       <p>Use coupon FASHXT34</p> 
        <KitechenIcon sx = {{fontSize: {xs: 60 , md : 100}}} />
       </div>
       <div className='Off'> 
-       <h2> 15% off  <br/>
-       on Every Kitechen Accessories  </h2>
-       <p>Use the Cupoon Code "FAXT45"</p> 
+       <h2>15% off kitchen</h2>
+       <p>Use coupon FAXT45</p> 
        <CheckroomIcon sx= {{fontSize: {xs:60 , md :100}}}/>
       </div>
       
