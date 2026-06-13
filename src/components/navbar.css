@@ -4,9 +4,10 @@
   justify-content: space-between;
   gap: 24px;
   width: 100%;
-  padding: 16px 32px;
-  background: var(--surface);
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -16,7 +17,7 @@
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--accent);
 }
 
 .nav-links,
@@ -35,7 +36,7 @@
 .nav-links a,
 .auth-buttons a {
   color: var(--text);
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -50,9 +51,9 @@
   border: 1px solid var(--border);
   background: #ffffff;
   color: var(--text);
-  border-radius: var(--radius);
+  border-radius: 999px;
   padding: 8px 12px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .cart-btn,
@@ -90,5 +91,11 @@
   .nav-links,
   .auth-buttons {
     gap: 12px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
   }
 }

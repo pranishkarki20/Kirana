@@ -13,6 +13,8 @@ function Navbar() {
     { name: "Contact", link: "/pages/contact" },
   ];
 
+  const cartCount = cart.reduce((total, item) => {
+    return total + item.quantity ;  } , 0 ) ;
   return (
     <nav className="navbar">
       <h2 className="logo">Kinara.com</h2>
@@ -25,7 +27,7 @@ function Navbar() {
         ))}
       </ul>
       <Link to="/checkout">
-        <button className="cart-btn">Cart ({cart.length})</button>
+        <button className="cart-btn">Cart ({cartCount})</button>
       </Link>
 
       <div className="auth-buttons">

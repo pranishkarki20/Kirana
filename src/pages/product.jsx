@@ -3,11 +3,11 @@ import './products.css'
 import { useCart } from "../context/cartContext";
 export default function Product() {
      const products = [
-    { id: 1, name: "Macbook", image: "/mac.jpg", price: "$1000", category: "mobile" },
-    { id: 2, name: "Iphone", image: "/iphone.jpg", price: "$599", category: "mobile" },
-    { id: 3, name: "Suit", image: "/suit.jpg", price: "$250", category: "clothes" },
-    { id: 4, name: "Check shirt", image: "/checkshirt.jpg", price: "$100", category: "clothes" },
-    { id: 5, name: "Bag", image: "/bag.jpg", price: "$89.90", category: "clothes" }
+    { id: 1, name: "Macbook", image: "/mac.jpg", price: "Rs 1000", category: "mobile" },
+    { id: 2, name: "Iphone", image: "/iphone.jpg", price: "Rs 599", category: "mobile" },
+    { id: 3, name: "Suit", image: "/suit.jpg", price: "Rs 250", category: "clothes" },
+    { id: 4, name: "Check shirt", image: "/checkshirt.jpg", price: "Rs 100", category: "clothes" },
+    { id: 5, name: "Bag", image: "/bag.jpg", price: "Rs 89.90", category: "clothes" }
   ];
   
   const {addtoCart} = useCart();

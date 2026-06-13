@@ -1,7 +1,7 @@
 .testemony {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 24px 56px;
+  padding: 0 24px 72px;
 }
 
 .testemony h1 {
@@ -16,10 +16,11 @@
 }
 
 .ard {
-  padding: 20px;
+  padding: 22px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .ard h1 {

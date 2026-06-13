@@ -1,7 +1,7 @@
 .Offers {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 16px 24px 56px;
+  padding: 8px 24px 72px;
 }
 
 .offe h2 {
@@ -18,10 +18,16 @@
 .firstoder,
 .Off {
   min-height: 180px;
-  padding: 20px;
+  padding: 22px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.firstoder {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+  border-color: #bfdbfe;
 }
 
 .firstoder h1,
@@ -37,7 +43,7 @@
 
 .Off svg {
   margin-top: 14px;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 @media (max-width: 640px) {
